@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text for dltd</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            transition: background 1s ease-in-out;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+            z-index: 10;
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #1a252f;
+        }
+        .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .photo-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+        .photo-gallery p {
+            margin-top: -5px;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #555;
+        }
+        #gallerySection, #secretMessage, #finalMessage {
+            display: none;
+        }
+        #secretMessage, #finalMessage {
+            margin-top: 20px;
+            text-align: left;
+            line-height: 1.6;
+            color: #333;
+        }
+        .love-text {
+            text-align: center;
+            font-size: 1.15em;
+            font-style: italic;
+            opacity: 0.75;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        .error {
+            color: #e74c3c;
+            font-size: 0.9em;
+            display: none;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<audio id="bgMusic" src="lagu.mp3" loop></audio>
+
+<div class="container">
+    <div id="loginSection">
+        <h2>some words for dltd</h2>
+        <p>password clue: our anniv (bulan/tanggal/tahun)(angka)</p>
+        <input type="password" id="passwordInput" placeholder="ketik password...">
+        <p id="errorMsg" class="error">password salah, kamu lupa anniv kita?.</p>
+        <button onclick="checkPassword()">buka pesan</button>
+    </div>
+
+    <div id="gallerySection">
+        <h3>a gentle reminder, in case u forget</h3>
+        
+        <div class="photo-gallery">
+            <img src="foto1.jpg" alt="Kenangan 1">
+            <p>don't you remember?</p>
+            
+            <img src="foto2.jpg" alt="Kenangan 2">
+            <p>first time meeting your mother</p>
+            
+            <img src="foto3.jpg" alt="Kenangan 3">
+            <p>hope this is not the last</p>
+        </div>
+
+        <button onclick="goToMessage()">uda siap baca nya?</button>
+    </div>
+
+    <div id="secretMessage">
+        <h3>Untuk Kamu, Dilla Tresna Dewi</h3>
+        <p>hii, gimana kabarnyaa laa? semoga baik baik aja yaa, oiya repot repot banget yaa aku sampe bikin ini cuma karena buat bilang beberapa hal ke kamu, btw bagus gaa wkwkwk.</p>
+        
+        <p>kayanya perpisahan kita kemarin terlalu cepet banget yaa, maksudnya kaya lewat gitu aja cepet banget dan kaya gaa seharusnya pas kemarin.</p>
+        
+        <p>akuu gaada tujuan apa apa sii bikin ini ke kamu sebenernya, cuma sedikit kangen dan mau kasi tau ajaa ke kamu kalo aku sekarang ini lagi sendiri bisa dibilang hubungan aku selesai sama dia. yaa aku sadar ini semua karena kesalahan aku, aku yang belum selesai sama kamu tapi aku sendiri ngejalanin hubungan sama orang lain.</p>
+        
+        <p>sekarang aku kayanya ngerasain karma atas apa yang aku lakuin dari dulu. sedih, sakit sii cuma yaa mau gimana ini lagi mungkin ini pertanggungjawabannya.</p>
+        
+        <p>oiyaa semoga kamu baik baik aja dimanapun dan dengan siapapun itu, tetap jadi diri kamu sendiri dan selalu percaya diri sama jangan pernah liat ke belakang yang perna kamu laluin.</p>
+        
+        <p>last but not least, dari aku yang susah banget buat lupain kamu. meskipun aku coba buat move on dari kamu (meskipun susa dan kayanya gabisa wkwk) aku selalu nerima kamu apa adanya kapanpun kamu butuh aku dan aku ada disini gaa kemana mana.</p>
+        
+        <br>
+        
+        <button onclick="goToFinalMessage()">mau tau rahasia?</button>
+    </div>
+
+    <div id="finalMessage">
+        <h3>my biggest secret's</h3>
+        <p>sejujurnya laa, aku gaakan bisa lepas dari kamu meskipun kamu kayanya bisa perlahan dengan waktu. aku gabisa laa, aku cemburu klo kamu deket sama cowo lain, aku cemburu ada yang bisa deket sama kamu bisa nemenin kamu dan mungkin lebih baik dari aku. dari dasar hati aku ngerasa harusnya aku yang ada disitu di posisi itu yang selalu sama kamu di setiap kondisi.</p>
+        
+        <p>aku selalu coba buat gantiin kamu dengan perempuan lain, tp nyatanya sampe saat ini gaada yang berhasil, aku coba buat sendiri pun hasilnya bakalan sama. aku udah gatau lagi harus gimana, sedangkan kamu udah buletin tekat buat ga sama aku lagi kan?</p>
+        
+        <p>kita gabisa bareng bareng lagi yaa? aku berharap kita bisa mulai semuanya dari awal dan jangan sampe ada kata perpisahan lagi. kita perbaikin hal hal yang emang ngerusak hubungan kita dulu, komunikasi salah satunya kan?</p>
+        
+        <p>tapi semuanya balik lagi ke kamu, aku nunggu kamu si laa gatau sampe kapan aku kaya gini. fyi, aku uda buka blok wa kamu di semua no aku.</p>
+
+        <p class="love-text">love u, dilla tresna dewi. always</p>
+    </div>
+</div>
+
+<script>
+    function checkPassword() {
+        var pass = document.getElementById("passwordInput").value;
+        var music = document.getElementById("bgMusic");
+        
+        if (pass === "082120") {
+            document.getElementById("loginSection").style.display = "none";
+            document.getElementById("gallerySection").style.display = "block";
+            
+            document.body.style.backgroundImage = "url('rdndltd.png')";
+            
+            music.play();
+        } else {
+            document.getElementById("errorMsg").style.display = "block";
+        }
+    }
+
+    function goToMessage() {
+        document.getElementById("gallerySection").style.display = "none";
+        document.getElementById("secretMessage").style.display = "block";
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToFinalMessage() {
+        document.getElementById("secretMessage").style.display = "none";
+        document.getElementById("finalMessage").style.display = "block";
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
